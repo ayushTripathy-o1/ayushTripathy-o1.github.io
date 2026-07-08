@@ -1,6 +1,6 @@
 const Skills = () => {
     return (
-        <div>Skills</div>
+        <div className="min-h-screen">Skills</div>
     )
 }
 

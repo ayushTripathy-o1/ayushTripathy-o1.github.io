@@ -1,6 +1,6 @@
 const Connect = () => {
     return (
-        <div>Connect</div>
+        <div className="min-h-screen">Connect</div>
     )
 }
 

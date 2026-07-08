@@ -33,3 +33,23 @@ canvas {
         background-position: -200% center;
     }
 }
+
+html,
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: non;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+@utility no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
