@@ -1,1 +1,1 @@
-export const routes: string[] = ["about", "projects", "skills", "connect"]; 
+export const routes: string[] = ["about", "projects", "skills", "connect", "now"]; 

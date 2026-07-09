@@ -6,6 +6,7 @@ import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Connect from "./pages/Connect";
 import View from "./layouts/View";
+import Now from "./pages/Now";
 
 const router = createBrowserRouter([{
     path: "/",
@@ -18,6 +19,7 @@ const router = createBrowserRouter([{
                 { path: "projects", Component: Projects },
                 { path: "skills", Component: Skills },
                 { path: "connect", Component: Connect },
+                { path: "now", Component: Now },
             ]
         },
     ],
