@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router"
+import { createBrowserRouter, redirect, RouterProvider } from "react-router"
 import Root from "./layouts/Root";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -7,6 +7,7 @@ import Skills from "./pages/Skills";
 import Connect from "./pages/Connect";
 import View from "./layouts/View";
 import Now from "./pages/Now";
+import projects from "./data/projects";
 
 const router = createBrowserRouter([{
     path: "/",
@@ -16,7 +17,8 @@ const router = createBrowserRouter([{
         {
             Component: View, children: [
                 { path: "about", Component: About },
-                { path: "projects", Component: Projects },
+                { path: "projects", Component: Projects, loader: () => redirect(`/projects/${encodeURIComponent(projects[0].name)}`) },
+                { path: "/projects/:projectName", Component: Projects },
                 { path: "skills", Component: Skills },
                 { path: "connect", Component: Connect },
                 { path: "now", Component: Now },

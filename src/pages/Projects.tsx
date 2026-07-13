@@ -1,4 +1,14 @@
+import { Link, useParams } from "react-router";
+import ProjectViewComponent from "../components/ProjectViewComponent";
+import projects from "../data/projects"
+
 const Projects = () => {
+    const { projectName } = useParams<{ projectName: string }>();
+    const currentIndex = projects.findIndex(p => p.name === decodeURIComponent(projectName));
+    const safeIndex = currentIndex === -1 ? 0 : currentIndex;
+    const hasProjects = projects.length > 0;
+    const nextProject = hasProjects ? projects[(safeIndex + 1) % projects.length] : null;
+    const prevProject = hasProjects ? projects[(safeIndex - 1 + projects.length) % projects.length] : null;
     return (
         <div className="min-h-screen">
             <div className="flex flex-row items-center justify-between mt-2 mb-0 font-jetbrains">
@@ -9,14 +19,33 @@ const Projects = () => {
                 <div className="flex flex-col items-center justify-center gap-2 w-64">
                     <h2 className="underline underline-offset-6 mt-3 mb-4">[ Project Details ]</h2>
                 </div>
-                <div className="flex flex-col items-center justify-center gap-2 w-64">
+                <div className="flex flex-col items-center justify-center gap-2 w-58">
                     <h2 className="underline underline-offset-6 mt-3 mb-4">[ Controls ]</h2>
                 </div>
             </div>
             <div className="flex flex-row h-screen justify-between mt-2 mb-0 font-jetbrains">
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
+                <div className="w-120 gap-4">
+                    {projects.map((p, idx) => {
+                        const isActive = projectName === p.name;
+                        return (
+                            <Link key={idx} to={`/projects/${encodeURIComponent(p.name)}`} className={`block ml-3 pb-2 transition-colors ${isActive ? 'text-blue-500' : 'text-blue-400 hover:text-blue-500'}`}>[ {p?.name} ]</Link>
+                        );
+                    })}
+                </div>
+                <div className="w-screen mx-2 p-2">
+                    <div className="h-screen flex flex-col">
+                        <ProjectViewComponent projectName={projectName} />
+                    </div>
+                </div>
+                <div className="w-85 flex flex-col items-center">
+                    {projects.length > 1 && nextProject && prevProject && (
+
+                        <>
+                            <Link to={`/projects/${encodeURIComponent(nextProject.name)}`} className="text-blue-400 hover:text-blue-500 text-xl">[ Next ]</Link>
+                            <Link to={`/projects/${encodeURIComponent(prevProject.name)}`} className="text-blue-400 hover:text-blue-500 text-xl">[ Prev ]</Link>
+                        </>
+                    )}
+                </div>
             </div>
         </div>
     )
