@@ -8,6 +8,7 @@ import Connect from "./pages/Connect";
 import View from "./layouts/View";
 import Now from "./pages/Now";
 import projects from "./data/projects";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter([{
     path: "/",
@@ -18,11 +19,14 @@ const router = createBrowserRouter([{
             Component: View, children: [
                 { path: "about", Component: About },
                 { path: "projects", Component: Projects, loader: () => redirect(`/projects/${encodeURIComponent(projects[0].name)}`) },
-                { path: "/projects/:projectName", Component: Projects },
+                { path: "projects/:projectName", Component: Projects },
                 { path: "skills", Component: Skills },
                 { path: "connect", Component: Connect },
                 { path: "now", Component: Now },
             ]
+        },
+        {
+            path: "*", Component: NotFoundPage
         },
     ],
 },

@@ -1,14 +1,16 @@
 import { Link, useParams } from "react-router";
 import ProjectViewComponent from "../components/ProjectViewComponent";
 import projects from "../data/projects"
+import NotFoundPage from "./NotFoundPage";
 
 const Projects = () => {
     const { projectName } = useParams<{ projectName: string }>();
-    const currentIndex = projects.findIndex(p => p.name === decodeURIComponent(projectName));
-    const safeIndex = currentIndex === -1 ? 0 : currentIndex;
-    const hasProjects = projects.length > 0;
-    const nextProject = hasProjects ? projects[(safeIndex + 1) % projects.length] : null;
-    const prevProject = hasProjects ? projects[(safeIndex - 1 + projects.length) % projects.length] : null;
+    const currentIndex = projects.findIndex(p => p.name === decodeURIComponent(projectName ?? ""));
+    if (currentIndex === -1) {
+        return <NotFoundPage />;
+    }
+    const nextProject = projects[(currentIndex + 1) % projects.length];
+    const prevProject = projects[(currentIndex - 1 + projects.length) % projects.length];
     return (
         <div className="min-h-screen">
             <div className="flex flex-row items-center justify-between mt-2 mb-0 font-jetbrains">
@@ -41,8 +43,8 @@ const Projects = () => {
                     {projects.length > 1 && nextProject && prevProject && (
 
                         <>
-                            <Link to={`/projects/${encodeURIComponent(nextProject.name)}`} className="text-blue-400 hover:text-blue-500 text-xl">[ Next ]</Link>
-                            <Link to={`/projects/${encodeURIComponent(prevProject.name)}`} className="text-blue-400 hover:text-blue-500 text-xl">[ Prev ]</Link>
+                            <Link to={`/projects/${encodeURIComponent(nextProject.name)}`} className="text-blue-400 hover:text-blue-500">[ Next ]</Link>
+                            <Link to={`/projects/${encodeURIComponent(prevProject.name)}`} className="text-blue-400 hover:text-blue-500">[ Prev ]</Link>
                         </>
                     )}
                 </div>
