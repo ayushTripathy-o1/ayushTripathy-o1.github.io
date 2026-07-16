@@ -18,6 +18,7 @@ const ShinyText = () => {
     hover:scale-105
     hover:drop-shadow-[0_0_30px_rgba(255,255,255,0.8)]
     font-jetbrains
+    cursor-pointer
     ">
             Ayush Tripathy
         </h1>

@@ -1,6 +1,6 @@
-import { FaJava, FaReact } from "react-icons/fa6"
+import { FaGitAlt, FaGithub, FaJava, FaLinux, FaReact } from "react-icons/fa6"
 import SkillIcon from "../components/SkillIcon"
-import { SiAxios, SiJavascript, SiMysql, SiPostgresql, SiPrisma, SiReactrouter, SiShadcnui, SiSpringboot, SiSpringsecurity, SiSqlite, SiTailwindcss, SiTypescript } from "react-icons/si"
+import { SiAxios, SiJavascript, SiMysql, SiNeovim, SiPostgresql, SiPostman, SiPrisma, SiReactrouter, SiShadcnui, SiSpringboot, SiSpringsecurity, SiSqlite, SiTailwindcss, SiTypescript, SiUbuntu } from "react-icons/si"
 import { FlowBiteIcon } from "../components/CustomIcons"
 import { LiaReact } from "react-icons/lia"
 
@@ -41,7 +41,17 @@ const Skills = () => {
                     <SkillIcon icon={LiaReact} skillName="react-icons" />
                     <SkillIcon icon={SiPrisma} skillName="Prisma" />
                 </div>
+                <h2 className="text-xl font-semibold mt-3 p-2 underline underline-offset-8">Dev Env</h2>
+                <div className="grid grid-cols-6 justify-center p-5 gap-4">
+                    <SkillIcon icon={FaLinux} skillName="Linux" />
+                    <SkillIcon icon={SiUbuntu} skillName="Ubuntu" />
+                    <SkillIcon icon={SiNeovim} skillName="Neovim" />
+                    <SkillIcon icon={FaGitAlt} skillName="Git" />
+                    <SkillIcon icon={FaGithub} skillName="Github" />
+                    <SkillIcon icon={SiPostman} skillName="Postman" />
+                </div>
             </div>
+
         </div>
     )
 }
