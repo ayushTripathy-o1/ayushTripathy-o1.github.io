@@ -19,7 +19,7 @@ const Connect = () => {
                     <SocialIcons icon={LuGithub} LinkName="Github" />
                 </div>
                 <div>
-                    <h3 className="mt-5 font-semibold">if you want my resume, please email me at...<Link to={"/"} className="text-blue-400 hover:text-blue-500 font-semibold cursor-pointer">Gmail.</Link></h3>
+                    <h3 className="mt-5 font-semibold">Wanna talk ?, send an email at...<Link to={"/"} className="text-blue-400 hover:text-blue-500 font-semibold cursor-pointer">address.</Link></h3>
                 </div>
                 <p className="mt-6 text-center text-sm text-gray-500 font-medium">
                     Thank you for visiting my portfolio!
