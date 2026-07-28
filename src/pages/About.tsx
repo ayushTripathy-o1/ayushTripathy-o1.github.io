@@ -1,4 +1,7 @@
 import { Link } from "react-router"
+import socialLinks from "../data/links"
+import { CiMail } from "react-icons/ci"
+import { MyImage } from "./images"
 
 const About = () => {
     return (
@@ -17,10 +20,21 @@ const About = () => {
                             Building reliable backend systems with Java, Spring Boot, and Web technologies.
                         </div>
                         <div className="mt-6 font-semibold font-jetbrains w-2xl">
-                            You can check my work at <Link className="font-bold text-blue-400 hover:text-blue-500 cursor-pointer" to={"/projects"}>/Projects</Link> or at my <strong className=" cursor-pointer font-bold text-blue-400 hover:text-blue-500">Github</strong>.
+                            You can check my work at <Link className="font-bold text-blue-400 hover:text-blue-500 cursor-pointer" to={"/projects"}>/Projects</Link> or at my <Link to={socialLinks["github"]} target="_blank" rel="noopener noreferrer"><strong className=" cursor-pointer font-bold text-blue-400 hover:text-blue-500">Github</strong></Link>.
                         </div>
                         <div className="mt-7 font-semibold font-jetbrains">
                             If you want to know what i am doing now, head over to <Link className="font-bold cursor-pointer text-blue-400 hover:text-blue-500" to={"/now"}>/Now</Link>.
+                        </div>
+                        <div className="mt-7 font-semibold font-jetbrains">
+                        </div>
+                        <div className="flex flex-col items-center gap-1">
+                            <img src={MyImage} alt="MyImage" className="w-60 aspect-3/4 object-cover p-1 shadow-md rounded-xs" />
+                            <h3 className="mt-5 font-semibold flex flex-row gap-3">
+                                Wanna talk?
+                                <a href={`mailto:${socialLinks["gmail"]}`} className="flex flex-row items-center gap-1 text-gray-300 hover:text-blue-500 transition-colors duration-200">
+                                    Send email <CiMail className="text-xl" />
+                                </a>
+                            </h3>
                         </div>
                     </div>
                 </div>

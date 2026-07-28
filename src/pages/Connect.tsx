@@ -18,9 +18,6 @@ const Connect = () => {
                     <SocialIcons icon={PiMicrosoftOutlookLogo} LinkName="Outlook" />
                     <SocialIcons icon={LuGithub} LinkName="Github" />
                 </div>
-                <div>
-                    <h3 className="mt-5 font-semibold">Wanna talk ?, send an email at...<Link to={"/"} className="text-blue-400 hover:text-blue-500 font-semibold cursor-pointer">address.</Link></h3>
-                </div>
                 <p className="mt-6 text-center text-sm text-gray-500 font-medium">
                     Thank you for visiting my portfolio!
                 </p>
