@@ -1,8 +1,14 @@
 export type Project = {
     name: string;
     description: string;
+    techStack: string[];
+    features: string[];
+    links: Partial<Record<ProjectLinks, string>>;
+    image: string;
 };
 
-type SocialPlatform = 'github' | 'x' | 'gmail'; // extendible to 'linkedin' | '' and so on
+type ProjectLinks = 'github' | 'livelink' | 'codeberge';
+
+type SocialPlatform = 'github' | 'x' | 'gmail';
 
 export type SocailLinks = Partial<Record<SocialPlatform, string>>;

@@ -16,13 +16,13 @@ const Projects = () => {
             <div className="flex flex-row items-center justify-between mt-2 mb-0 font-jetbrains">
                 {/* Headings */}
                 <div className="flex flex-col items-center justify-center gap-2 w-64">
-                    <h2 className="underline underline-offset-6 mt-3 mb-4">[ Index ]</h2>
+                    <h2 className="text-xl underline underline-offset-6 mt-3 mb-4">[ Index ]</h2>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-2 w-64">
-                    <h2 className="underline underline-offset-6 mt-3 mb-4">[ Project Details ]</h2>
+                    <h2 className="text-xl underline underline-offset-6 mt-3 mb-4">[ Project Details ]</h2>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-2 w-58">
-                    <h2 className="underline underline-offset-6 mt-3 mb-4">[ Controls ]</h2>
+                    <h2 className="text-xl underline underline-offset-6 mt-3 mb-4">[ Controls ]</h2>
                 </div>
             </div>
             <div className="flex flex-row h-screen justify-between mt-2 mb-0 font-jetbrains">
@@ -39,7 +39,7 @@ const Projects = () => {
                         <ProjectViewComponent projectName={projectName} />
                     </div>
                 </div>
-                <div className="w-85 flex flex-col items-center">
+                <div className="w-85 flex flex-col items-center text-lg">
                     {projects.length > 1 && nextProject && prevProject && (
 
                         <>

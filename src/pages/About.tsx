@@ -1,7 +1,7 @@
 import { Link } from "react-router"
 import socialLinks from "../data/links"
 import { CiMail } from "react-icons/ci"
-import { MyImage } from "./images"
+import { MyImage } from "../data/images"
 
 const About = () => {
     return (
