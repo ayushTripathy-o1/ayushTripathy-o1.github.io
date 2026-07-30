@@ -31,7 +31,7 @@ const About = () => {
                             <img src={MyImage} alt="MyImage" className="w-60 aspect-3/4 object-cover p-1 shadow-md rounded-xs" />
                             <h3 className="mt-5 font-semibold flex flex-row gap-3">
                                 Wanna talk?
-                                <a href={`mailto:${socialLinks["gmail"]}`} className="flex flex-row items-center gap-1 text-gray-300 hover:text-blue-500 transition-colors duration-200">
+                                <a href={`mailto:${socialLinks["gmail"]}`} className="hover:underline flex flex-row items-center gap-1 text-gray-300 hover:text-blue-500 transition-colors duration-200">
                                     Send email <CiMail className="text-xl" />
                                 </a>
                             </h3>

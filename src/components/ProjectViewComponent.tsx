@@ -8,7 +8,7 @@ const ProjectViewComponent = ({ projectName }: ProjectViewComponentProps) => {
     const selectedProject = projects.find(p => p.name === projectName);
     return (
         <div className="px-4">
-            <div className="text-2xl tracking-tight">{selectedProject.name}</div><hr className="border-2 border-white mt-2" />
+            <div className="text-2xl tracking-tight font-bold">{selectedProject.name}</div><hr className="border-2 border-slate-300 mt-2" />
             <div className="flex flex-col items-center m-5 p-2"> <ProjectImageComponent imgSrc={selectedProject.image} /> </div>
             <p className="text-xl mt-2 font-bold">{selectedProject.description}</p>
             <div className="flex flex-wrap gap-2 items-baseline mt-8">
