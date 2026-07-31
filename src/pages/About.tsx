@@ -28,7 +28,12 @@ const About = () => {
                         <div className="mt-7 font-semibold font-jetbrains">
                         </div>
                         <div className="flex flex-col items-center gap-1">
-                            <img src={MyImage} alt="MyImage" className="w-60 aspect-3/4 object-cover p-1 shadow-md rounded-xs" />
+                            <div className="group relative inline-block">
+                                <img src={MyImage} alt="MyImage" className="w-60 aspect-3/4 object-cover p-1 shadow-md rounded-xs border-2 border-slate-100 cursor-pointer" />
+                                <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 absolute left-[calc(100%+12px)] top-1/2 -translate-y-1/2 w-max bg-[#1a1919] text-white text-sm font-medium px-3 py-2 rounded-md shadow-2xl ring-1 ring-white/10 pointer-events-none z-10">
+                                    Hey that's me!
+                                </div>
+                            </div>
                             <h3 className="mt-5 font-semibold flex flex-row gap-3">
                                 Wanna talk?
                                 <a href={`mailto:${socialLinks["gmail"]}`} className="hover:underline flex flex-row items-center gap-1 text-gray-300 hover:text-blue-500 transition-colors duration-200">

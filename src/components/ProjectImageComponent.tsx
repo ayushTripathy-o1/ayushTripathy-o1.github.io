@@ -34,8 +34,8 @@ const ProjectImageComponent = ({ imgSrc }: ProjectImageComponentProps) => {
                         />
                     )}
                 </div>
-                <button className="absolute -top-2 -right-2 z-10 flex items-center justify-center w-5 h-5 bg-zinc-200 rounded-full shadow cursor-pointer" onClick={closeModal}>
-                    <LuX className="w-10 h-10" />
+                <button className="absolute -top-2 -right-2 z-10 flex items-center justify-center w-7 h-7 bg-[#1a1919] rounded-full shadow cursor-pointer" onClick={closeModal}>
+                    <LuX className="h-6 w-6 text-blue-400 font-medium" />
                     <span className="sr-only">Close</span>
                 </button>
             </dialog>

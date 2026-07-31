@@ -37,7 +37,7 @@ canvas {
 html,
 body {
     -ms-overflow-style: none;
-    scrollbar-width: non;
+    scrollbar-width: none;
 }
 
 html::-webkit-scrollbar,

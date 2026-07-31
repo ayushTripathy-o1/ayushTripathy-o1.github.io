@@ -26,7 +26,7 @@ const Projects = () => {
                 </div>
             </div>
             <div className="flex flex-row h-screen justify-between mt-2 mb-0 font-jetbrains">
-                <div className="w-120 gap-4">
+                <div className="w-120 gap-4 mt-2">
                     {projects.map((p, idx) => {
                         const isActive = projectName === p.name;
                         return (
@@ -42,10 +42,10 @@ const Projects = () => {
                 <div className="w-85 flex flex-col items-center text-lg">
                     {projects.length > 1 && nextProject && prevProject && (
 
-                        <>
+                        <div className="flex flex-col mt-3">
                             <Link to={`/projects/${encodeURIComponent(nextProject.name)}`} className="text-blue-400 hover:text-blue-500">[ Next ]</Link>
                             <Link to={`/projects/${encodeURIComponent(prevProject.name)}`} className="text-blue-400 hover:text-blue-500">[ Prev ]</Link>
-                        </>
+                        </div>
                     )}
                 </div>
             </div>
