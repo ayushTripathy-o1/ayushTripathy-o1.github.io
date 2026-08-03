@@ -25,7 +25,7 @@ const Projects = () => {
                     <h2 className="text-xl underline underline-offset-6 mt-3 mb-4">[ Controls ]</h2>
                 </div>
             </div>
-            <div className="flex flex-row h-screen justify-between mt-2 mb-0 font-jetbrains">
+            <div className="flex flex-row justify-between mt-2 mb-0 font-jetbrains">
                 <div className="w-120 gap-4 mt-2">
                     {projects.map((p, idx) => {
                         const isActive = projectName === p.name;
@@ -35,7 +35,7 @@ const Projects = () => {
                     })}
                 </div>
                 <div className="w-screen mx-2 p-2">
-                    <div className="h-screen flex flex-col">
+                    <div className="h-full flex flex-col">
                         <ProjectViewComponent projectName={projectName} />
                     </div>
                 </div>

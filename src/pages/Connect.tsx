@@ -1,9 +1,8 @@
-import { FaLinkedin } from "react-icons/fa6"
 import SocialIcons from "../components/SocialIcons"
 import { SiGmail } from "react-icons/si"
 import { PiMicrosoftOutlookLogo } from "react-icons/pi"
 import { LuGithub } from "react-icons/lu"
-import { Link } from "react-router"
+import socialLinks from "../data/links"
 
 const Connect = () => {
     return (
@@ -12,9 +11,8 @@ const Connect = () => {
                 <h1 className="mt-2 text-2xl font-semibold tracking-tight underline underline-offset-8">
                     Social Links</h1>
                 <h3 className="mt-5 font-semibold"> Choose any suitable method: </h3>
-                <div className="mt-3 p-4 grid grid-cols-2 gap-4">
-                    <Link to={"/"}><SocialIcons icon={FaLinkedin} LinkName="LinkedIn" /></Link>
-                    <SocialIcons icon={SiGmail} LinkName="Gmail" />
+                <div className="mt-3 p-4 flex flex-row gap-4">
+                    <a href={`mailto:${socialLinks["gmail"]}`}><SocialIcons icon={SiGmail} LinkName="Gmail" /> </a>
                     <SocialIcons icon={PiMicrosoftOutlookLogo} LinkName="Outlook" />
                     <SocialIcons icon={LuGithub} LinkName="Github" />
                 </div>
