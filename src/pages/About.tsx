@@ -20,7 +20,7 @@ const About = () => {
                             Building reliable backend systems with Java, Spring Boot, and Web technologies.
                         </div>
                         <div className="mt-6 font-semibold font-jetbrains w-2xl">
-                            You can check my work at <Link className="font-bold text-blue-400 hover:text-blue-500 cursor-pointer" to={"/projects"}>/Projects</Link> or at my <Link to={socialLinks["github"]} target="_blank" rel="noopener noreferrer"><strong className=" cursor-pointer font-bold text-blue-400 hover:text-blue-500">Github</strong></Link>.
+                            You can check my work at <Link className="font-bold text-blue-400 hover:text-blue-500 cursor-pointer" to={"/projects"}>/Projects</Link> or at my <Link to={socialLinks["github"]!} target="_blank" rel="noopener noreferrer"><strong className=" cursor-pointer font-bold text-blue-400 hover:text-blue-500">Github</strong></Link>.
                         </div>
                         <div className="mt-7 font-semibold font-jetbrains">
                             If you want to know what i am doing now, head over to <Link className="font-bold cursor-pointer text-blue-400 hover:text-blue-500" to={"/now"}>/Now</Link>.

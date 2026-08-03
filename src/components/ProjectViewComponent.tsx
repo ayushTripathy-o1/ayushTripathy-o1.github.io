@@ -5,7 +5,7 @@ type ProjectViewComponentProps = {
     projectName: string;
 }
 const ProjectViewComponent = ({ projectName }: ProjectViewComponentProps) => {
-    const selectedProject = projects.find(p => p.name === projectName);
+    const selectedProject = projects.find(p => p.name === projectName)!;
     return (
         <div className="px-4">
             <div className="text-2xl tracking-tight font-bold">{selectedProject.name}</div><hr className="border-2 border-slate-300 mt-2" />

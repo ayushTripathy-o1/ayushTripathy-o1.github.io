@@ -36,7 +36,7 @@ const Projects = () => {
                 </div>
                 <div className="w-screen mx-2 p-2">
                     <div className="h-full flex flex-col">
-                        <ProjectViewComponent projectName={projectName} />
+                        <ProjectViewComponent projectName={projectName!} />
                     </div>
                 </div>
                 <div className="w-85 flex flex-col items-center text-lg">

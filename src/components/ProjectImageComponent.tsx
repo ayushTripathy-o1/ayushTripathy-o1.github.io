@@ -7,7 +7,7 @@ const ProjectImageComponent = ({ imgSrc }: ProjectImageComponentProps) => {
 
     useEffect(() => {
         if (!activeImage) return;
-        dialogRef.current.showModal();
+        dialogRef.current?.showModal();
         document.body.style.overflow = 'hidden';
         dialogRef.current?.addEventListener('close', closeModal);
         return () => {
@@ -16,7 +16,7 @@ const ProjectImageComponent = ({ imgSrc }: ProjectImageComponentProps) => {
     }, [activeImage]);
 
     function closeModal() {
-        dialogRef.current.close();
+        dialogRef.current?.close();
         setActiveImage("");
         document.body.style.overflow = '';
     }
