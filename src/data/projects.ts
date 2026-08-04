@@ -15,7 +15,7 @@ const projects: Project[] = [
         description: "A production-inspired authentication system built with Spring Boot and React, featuring JWT authentication, secure HTTP-only cookies, automatic token refresh, and persistent session management. The project focuses on implementing modern authentication practices while delivering a seamless user experience.",
         techStack: ["Java 21", "Spring boot", "Spring security", "Spring boot oauth Resource server", "Spring data JPA", "Mysql", "Lombok", "Spring Boot Dev-Tools", "React", "React Router", "tailwindcss", "Axios", "React-Hook-Form", "Zustand"],
         features: ["JWT authentication with access and refresh tokens.", "Spring Security with OAuth2 Resource Server integration.", "Secure HTTP-only cookie-based authentication.", "Automatic access token refresh using Axios interceptors.", "User registration, login, logout, and protected routes.", "Session persistence and revocation backed by MySQL.", "React, TypeScript, Zustand, and Spring Data JPA integration.", "Clean REST APIs with standardized responses and validation."],
-        links: { github: "github link" },
+        links: { github: "https://github.com/ayushTripathy-o1/UserAuthentication.git" },
         image: UserAuth,
     },
     {
@@ -23,7 +23,7 @@ const projects: Project[] = [
         description: "A video streaming platform that automatically converts uploaded videos into multiple HLS quality variants using FFmpeg. Video processing runs asynchronously in the background, while HLS.js enables adaptive streaming for smooth playback across different network conditions.",
         techStack: ["Java", "Spring Boot", "Spring Data JPA", "Lombok", "Sqlite", "React", "React Router", "Axios", "hls.js", "Flowbite"],
         features: ["Upload videos through REST APIs.", "Asynchronous video processing using Spring Boot.", "Automatic FFmpeg transcoding into multiple resolutions.", "HLS playlist and segment generation for adaptive streaming.", "Browser playback powered by HLS.js.", "Automatic quality switching based on network speed.", "Modular video processing pipeline for scalability.", "Built with Spring Boot, React, and TypeScript for an end-to-end streaming experience."],
-        links: { github: "link" },
+        links: { github: "https://github.com/ayushTripathy-o1/Hls-Streaming.git" },
         image: HlsApp,
     },
 ];
