@@ -9,6 +9,6 @@ export type Project = {
 
 type ProjectLinks = 'github' | 'livelink' | 'codeberge';
 
-type SocialPlatform = 'github' | 'x' | 'gmail';
+type SocialPlatform = 'github' | 'x' | 'gmail' | 'outlook';
 
 export type SocailLinks = Partial<Record<SocialPlatform, string>>;
