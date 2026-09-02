@@ -37,7 +37,7 @@ const About = () => {
                             <h3 className="mt-5 font-semibold flex flex-row gap-3">
                                 Wanna talk?
                                 <a href={`mailto:${socialLinks["gmail"]}`} className="hover:underline flex flex-row items-center gap-1 text-gray-300 hover:text-blue-500 transition-colors duration-200">
-                                    Send email <CiMail className="text-xl" />
+                                    Mail...<CiMail className="text-xl" />
                                 </a>
                             </h3>
                         </div>

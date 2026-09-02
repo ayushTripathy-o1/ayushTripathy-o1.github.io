@@ -1,21 +1,16 @@
 import { useEffect, useRef } from "react";
 
-type Particle = {
+interface Particle {
     x: number;
     y: number;
-    vx: number;
-    vy: number;
-};
+    radius: number;
+    color: string;
+}
 
-const MAX_DISTANCE = 140;
-const DOT_RADIUS = 2;
+const COLORS = ["#2185C5", "#7ECEFD", "#FFF6E5", "#FF7F66"];
 
-const getParticleCount = (width: number) => {
-    if (width < 640) return 35;      // Mobile
-    if (width < 768) return 50;      // Large phones
-    if (width < 1024) return 80;     // Tablets
-    return 120;                      // Desktop
-};
+const PARTICLE_COUNT = 500;
+const ROTATION_SPEED = 0.001;
 
 const BackgroundCanvas = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -24,32 +19,17 @@ const BackgroundCanvas = () => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return;
+        const c = canvas.getContext("2d");
+        if (!c) return;
 
         let width = 0;
         let height = 0;
+        let radians = 0;
+        let alpha = 1;
+        let mouseDown = false;
         let animationFrame = 0;
 
         const particles: Particle[] = [];
-
-        const createParticles = () => {
-            particles.length = 0;
-
-            const particleCount = getParticleCount(width);
-
-            for (let i = 0; i < particleCount; i++) {
-                const angle = Math.random() * Math.PI * 2;
-                const speed = 0.3 + Math.random() * 0.6;
-
-                particles.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    vx: Math.cos(angle) * speed,
-                    vy: Math.sin(angle) * speed,
-                });
-            }
-        };
 
         const resize = () => {
             width = window.innerWidth;
@@ -63,69 +43,114 @@ const BackgroundCanvas = () => {
             canvas.style.width = `${width}px`;
             canvas.style.height = `${height}px`;
 
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            c.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-            createParticles();
+            init();
+        };
+
+        const init = () => {
+            particles.length = 0;
+
+            const canvasWidth = width + 1000;
+            const canvasHeight = height + 2000;
+
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                const x =
+                    Math.random() * canvasWidth -
+                    canvasWidth / 2;
+
+                const y =
+                    Math.random() * canvasHeight -
+                    canvasHeight / 2;
+
+                const radius = 2 * Math.random();
+
+                const color =
+                    COLORS[
+                    Math.floor(
+                        Math.random() * COLORS.length
+                    )
+                    ];
+
+                particles.push({
+                    x,
+                    y,
+                    radius,
+                    color,
+                });
+            }
+        };
+
+        const drawParticle = (particle: Particle) => {
+            c.beginPath();
+
+            c.arc(
+                particle.x,
+                particle.y,
+                particle.radius,
+                0,
+                Math.PI * 2
+            );
+
+            c.shadowColor = particle.color;
+            c.shadowBlur = 15;
+
+            c.fillStyle = particle.color;
+            c.fill();
+
+            c.closePath();
         };
 
         const animate = () => {
-            ctx.clearRect(0, 0, width, height);
-
-            // Move particles
-            for (const p of particles) {
-                p.x += p.vx;
-                p.y += p.vy;
-
-                if (p.x <= 0 || p.x >= width) p.vx *= -1;
-                if (p.y <= 0 || p.y >= height) p.vy *= -1;
-            }
-
-            // Draw connections
-            for (let i = 0; i < particles.length; i++) {
-                const a = particles[i];
-
-                for (let j = i + 1; j < particles.length; j++) {
-                    const b = particles[j];
-
-                    const dx = a.x - b.x;
-                    const dy = a.y - b.y;
-
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < MAX_DISTANCE) {
-                        const opacity =
-                            (1 - distance / MAX_DISTANCE) * 0.35;
-
-                        ctx.beginPath();
-                        ctx.moveTo(a.x, a.y);
-                        ctx.lineTo(b.x, b.y);
-                        ctx.strokeStyle = `rgba(255,255,255,${opacity})`;
-                        ctx.lineWidth = 1;
-                        ctx.stroke();
-                    }
-                }
-            }
-
-            // Draw dots
-            ctx.fillStyle = "rgba(255,255,255,0.9)";
-
-            for (const p of particles) {
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, DOT_RADIUS, 0, Math.PI * 2);
-                ctx.fill();
-            }
-
             animationFrame = requestAnimationFrame(animate);
+
+            c.fillStyle = `rgba(26, 25, 25, ${alpha})`;
+            c.fillRect(0, 0, width, height);
+
+            c.save();
+
+            c.translate(width / 2, height / 2);
+            c.rotate(radians);
+
+            for (const particle of particles) {
+                drawParticle(particle);
+            }
+
+            c.restore();
+
+            // Reset shadow state
+            c.shadowBlur = 0;
+
+            radians += ROTATION_SPEED;
+
+            if (mouseDown && alpha >= 0.03) {
+                alpha -= 0.01;
+            } else if (!mouseDown && alpha < 1) {
+                alpha += 0.01;
+            }
         };
+
+        const handleMouseDown = () => {
+            mouseDown = true;
+        };
+
+        const handleMouseUp = () => {
+            mouseDown = false;
+        };
+
+        window.addEventListener("resize", resize);
+        window.addEventListener("mousedown", handleMouseDown);
+        window.addEventListener("mouseup", handleMouseUp);
 
         resize();
         animate();
 
-        window.addEventListener("resize", resize);
-
         return () => {
             cancelAnimationFrame(animationFrame);
+
             window.removeEventListener("resize", resize);
+            window.removeEventListener("mousedown", handleMouseDown);
+            window.removeEventListener("mouseup", handleMouseUp);
         };
     }, []);
 
