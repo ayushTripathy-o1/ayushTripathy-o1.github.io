@@ -1,28 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pf | Ayush Tripathy</title>
-    <script type="text/javascript">
-        (function (l) {
-            if (l.search[1] === '/') {
-                var decoded = l.search.slice(1).split('&').map(function (s) {
-                    return s.replace(/~and~/g, '&')
-                }).join('?');
-                window.history.replaceState(null, null,
-                    l.pathname.slice(0, -1) + decoded + l.hash
-                );
-            }
-        }(window.location));
-    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Ayush Tripathy</title>
 </head>
 
 <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="flex flex-col items-center">
+        <h2 class="text-white/80 font-bold mt-6 text-3xl tracking-tight">Ayush Tripathy</h2>
+        <p class="tracking-tight text-xs text-zinc-100/50">Comp.sc Engineer</p>
+        <img src="./ayush.png" class="border-2 border-white w-70 mt-5 p-4" />
+        <p class="mt-2 text-slate-300/60 w-70 font-bold indent-2 text-center"> I build backend systems, developer tools
+            and things that probably didn't need to be built.</p>
+        <div class="mt-6 flex flex-row text-white/70 gap-3">
+            <a class="underline underline-offset-2 hover:text-white cursor-pointer"
+                href="https://github.com/ayushTripathy-o1" target="_blank" rel="noopener noreferrer"
+                aria-label="visit my github profile">Github</a>
+            <a class="underline underline-offset-2 hover:text-white cursor-pointer"
+                href="mailto:hi.ayushtripathy@gmail.com" aria-label="click to write me an email">Gmail</a>
+            <a class="underline underline-offset-2 hover:text-white cursor-pointer"
+                href="https://www.linkedin.com/in/ayush-tripathy-13b826428/" target="_blank" rel="noopener noreferrer"
+                aria-label="visit my linkedin profile">Linkedin</a>
+        </div>
+    </div>
+    <div class="p-2 ml-5 mt-5">
+        <h2 class="font-bold text-white/90 text-xl">projects</h2>
+        <div class="flex flex-col gap-3 mt-3 p-2">
+            <div>
+                <a class="text-white/70 underline underline-offset-2 hover:text-white cursor-pointer"
+                    href="https://github.com/ayushTripathy-o1/Multi-threaded-HTTP-Server.git" target="_blank"
+                    rel="noopener noreferrer" aria-label="visit repo">Http-Server</a>
+                <span class="text-slate-200"> multi-threaded http server written in java.</span>
+            </div>
+            <div>
+                <a class="text-white/70 underline underline-offset-2 hover:text-white cursor-pointer"
+                    href="https://github.com/ayushTripathy-o1/UserAuthentication.git" target="_blank"
+                    rel="noopener noreferrer" aria-label="visit repo">Authenication System</a>
+                <span class="text-slate-200"> full-stack authentication system with rbac.</span>
+            </div>
+            <div>
+                <a class="text-white/70 underline underline-offset-2 hover:text-white cursor-pointer"
+                    href="https://github.com/ayushTripathy-o1/Hls-Streaming.git" target="_blank"
+                    rel="noopener noreferrer" aria-label="visit repo">Hls-stream</a>
+                <span class="text-slate-200"> hls streaming and video conversion using ffpmeg.</span>
+            </div>
+        </div>
+        <h2 class="font-bold text-white/90 text-xl mt-3">now</h2>
+        <div class="mt-2">
+            <ul class="list-disc list-inside text-white/80 font-medium space-y-3 p-4">
+                <li>learning devops stuff, current: docker.</li>
+                <li>focusing on backend system design.</li>
+                <li>understanding scalable database concepts.</li>
+                <li>low level stuff in C.</li>
+            </ul>
+        </div>
+        <h2 class="font-bold text-white/90 text-xl mt-3">tech / dev</h2>
+        <div class="mt-2">
+            <ul
+                class="list-disc list-inside text-white/80 font-medium p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <li>Java</li>
+                <li>Typescript / Javascript</li>
+                <li>HTML, CSS</li>
+                <li>Spring Boot, Spring Security, Hibernate ORM</li>
+                <li>React, React Router, Tailwind CSS</li>
+                <li>Express, Axios, Prisma, Drizzle-orm, Zod</li>
+                <li>Mysql, postgresql, sqlite</li>
+                <li>linux, neovim</li>
+            </ul>
+        </div>
+    </div>
+    <footer class="text-center">
+        <p class="text-sm text-white/60 font-bold"> &copy; 2026 Ayush Tripathy</p>
+        <p class="text-xs text-white/50 font-semibold">No rights reserved</p>
+    </footer>
 </body>
 
 </html>
