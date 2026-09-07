@@ -7,45 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>404 — Ayush Tripathy</title>
+    <title>404 | Ayush Tripathy</title>
 </head>
 
-<body class="bg-black min-h-screen flex items-center justify-center">
+<body>
 
-    <div class="text-center text-white">
+    <div class="h-screen text-center text-white flex flex-col items-center justify-center">
         <h1 class="text-7xl font-bold tracking-tight">
             404
         </h1>
         <p class="mt-2 text-sm text-white/50 font-medium">
-            page not found
+            Page not found
         </p>
-        <div class="mt-8 w-80 border border-white/20 text-left">
-            <div class="flex items-center gap-1 px-3 py-2 border-b border-white/10">
-                <span class="text-white/30 text-xs">•</span>
-                <span class="text-white/30 text-xs">•</span>
-                <span class="text-white/30 text-xs">•</span>
-                <span class="ml-2 text-xs text-white/40">
-                    error
-                </span>
-            </div>
-            <div class="p-4">
-                <p class="text-xs text-white/50">
-                    location
-                </p>
-                <p class="mt-1 text-sm text-white/80">
-                    this page doesn't exist.
-                </p>
-                <button onclick="window.location.href='/'"
-                    class="mt-5 w-full border border-white/20 px-3 py-2 text-sm text-white/70 hover:text-white hover:border-white/50 transition cursor-pointer">
-                    go home ->
-                </button>
-            </div>
-        </div>
-        <p class="mt-6 text-xs text-white/30">
-            Ayush Tripathy
-        </p>
+        <button onclick="window.location.href='/'"
+            class="mt-6 px-2 py-3 text-white/60 border border-white/50 hover:text-white hover:border-white/90 active:text-white active:border-white/90 cursor-pointer">
+            Home ->
+        </button>
     </div>
 
+    <footer class="text-center">
+        <p class="text-sm text-white/60 font-bold"> &copy; 2026 Ayush Tripathy</p>
+        <p class="text-xs text-white/50 font-semibold">No rights reserved</p>
+    </footer>
 </body>
 
 </html>
