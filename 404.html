@@ -3,31 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>404 - Page Not Found | Ayush Tripathy</title>
+
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#09090b">
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="./main.css">
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>404 | Ayush Tripathy</title>
 </head>
 
 <body>
-
-    <div class="h-screen text-center text-white flex flex-col items-center justify-center">
+    <main class="min-h-screen text-center text-white flex flex-col items-center justify-center">
         <h1 class="text-7xl font-bold tracking-tight">
             404
         </h1>
+
         <p class="mt-2 text-sm text-white/50 font-medium">
             Page not found
         </p>
-        <button onclick="window.location.href='/'"
-            class="rounded-xl mt-6 px-2 py-3 text-white/60 border border-white/50 hover:text-white hover:border-white/90 active:text-white active:border-white/90 cursor-pointer">
-           Go Home
-        </button>
-    </div>
+
+        <p class="mt-2 text-sm text-white/60">
+            The page you're looking for doesn't exist or may have moved.
+        </p>
+
+        <a href="/"
+            class="rounded-xl mt-6 px-4 py-3 text-white/60 border border-white/50 hover:text-white hover:border-white/90 active:text-white active:border-white/90">
+            Go Home
+        </a>
+    </main>
 
     <footer class="text-center">
-        <p class="text-sm text-white/60 font-bold"> &copy; 2026 Ayush Tripathy</p>
-        <p class="text-xs text-white/50 font-semibold">No rights reserved</p>
+        <p class="text-sm text-white/60 font-bold">
+            &copy; 2026 Ayush Tripathy
+        </p>
+
+        <p class="text-xs text-white/50 font-semibold">
+            No rights reserved
+        </p>
     </footer>
 </body>
 
